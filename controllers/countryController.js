@@ -7,7 +7,8 @@ import Country from "../models/countryModel.js";
 */
 
 const getCountries = asyncHandler(async (req, res) => {
-  const countries = await Country.find();
+  const region = req.query.region;
+  const countries = await Country.find(region ? {region} : {});
 
   res.json({ countries });
 });
