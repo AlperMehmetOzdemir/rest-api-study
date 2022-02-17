@@ -11,6 +11,7 @@
   "author": "Alper Mehmet Özdemir",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.26.0",
     "dotenv": "^16.0.0",
     "express": "^4.17.2",
     "express-async-handler": "^1.2.0",
