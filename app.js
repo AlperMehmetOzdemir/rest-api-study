@@ -9,6 +9,7 @@ import { errorHandler, notFound } from "./middlewares/errorMiddleware.js";
 // Route Imports
 import countryRoutes from "./routes/countryRoutes.js";
 import salesrepRoutes from "./routes/salesrepRoutes.js";
+import optimalRoutes from "./routes/optimalRoutes.js";
 
 // Setup
 dotenv.config();
@@ -26,6 +27,7 @@ app.get("/", (req, res) => {
 // API Routes
 app.use("/countries", countryRoutes);
 app.use("/salesrep", salesrepRoutes);
+app.use("/optimal", optimalRoutes);
 
 // Custom Middleware
 app.use(notFound);

@@ -2,7 +2,7 @@ import asyncHandler from "express-async-handler";
 import axios from "axios";
 
 /*
-  @desc Get salesrep requirements for all countries
+  @desc Get minimum and maximum salesrep requirements for all countries
   @route GET /salesrep
 */
 const getSalesrep = asyncHandler(async (req, res) => {
@@ -11,6 +11,8 @@ const getSalesrep = asyncHandler(async (req, res) => {
   let countryData;
   const salesrepRequirements = [];
   const countryCountByRegion = {};
+  
+  // use internal API to access country information
   try {
     const apiResponse = await axios.get(
       `http://localhost:${process.env.PORT || 3000}/countries`
